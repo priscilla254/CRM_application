@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<table class="table table-bordered table-dark">
+    <thead class="thead-dark">
+    {% for leads in leads %}
+      <tr>
+       
+        <th scope="col">First_name</th>
+        <th scope="col">Last_name</th>
+        <th scope="col">Company</th>
+        <th scope="col">Company_position</th>
+        <th scope="col">phone_number</th>
+        <th scope="col">email_address</th>
+        <th scope="col">agent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>{{leads.first_name}}</td>
+        <td>{{leads.last_name}}</td>
+        <td>{{leads.company}}</td>
+        <td>{{leads.company_position}}</td>
+        <td>{{leads.phone_number}}</td>
+        <td>{{leads.email_address}}</td>
+        <td>{{leads.agent}}</td>
+      </tr>
+     
+    </tbody>
+    {% endfor %}
+  </table>
+{% endblock %}
