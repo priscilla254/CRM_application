@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login,logout   
 from django.contrib import messages
 from .forms import *
+from django.core.mail import send_mail
 def Home(request):
     return render(request,'users/dashboard.html')
 
@@ -40,3 +41,22 @@ def LogoutView(request):
     logout(request)
     messages.info(request,"you have successfully logged out.")
     return redirect('/')
+
+def ContactView(request):
+    if request.method=='POST':
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        contact.name=name
+        contact.email=email
+        contact.subject=subject
+        contact.save()
+        send_mail(
+            name, # subject
+            subject, #message
+            email,#from email
+            ['baiyawambui8@gmail.com'],
+        )
+        return render(request,'users/contact_us.html',{'name':name})
+    return render(request,'users/contact_us.html')
