@@ -1,0 +1,56 @@
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+       </head>
+<style>
+    body{
+              background: rgba(222,222,222,1);
+              margin: 20px;
+    }
+    #container {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 20px;   
+        border: 1px solid black; 
+        float:center;
+        border-radius: 5%;
+        padding: 1em;
+        justify-content: center;
+    }
+    
+           
+    }
+    #button{
+    cursor: pointer;
+    border: none;
+    color: #58992c;
+    
+    text-transform: uppercase;
+    font-size: 1.5em;
+    background-color: rgb(255, 255, 255);
+    
+    letter-spacing: 1px;
+    transition: all 0.3s;    
+    }
+            </style>
+
+
+
+
+<body>
+<div id="container">
+        <div id="text">
+        <h1>Notes</h1>
+<ul>
+        
+          {% for note in notes %}
+ 	<li>{{note.text}}</li>
+        {% endfor %}</ul>
+<form method="POST" action="">
+   {% csrf_token %}
+   
+     {{form.as_p}}
+<input type="submit" class="btn btn-primary" name="submit">
+</form>
+</div>
+</div>
+</body> 

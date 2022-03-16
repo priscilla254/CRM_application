@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-bordered table-dark">
+    <thead class="thead-dark">
+    {% for opportunities in opportunities %}
+      <tr>
+       
+        <th scope="col">Opportunity name</th>
+        <th scope="col">account name</th>
+        <th scope="col">stage</th>
+        <th scope="col">close date</th>
+        <th scope="col">opportunity owner</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>{{opportunities.opportunity_name}}</td>
+        <td>{{opportunities.account_name}}</td>
+        <td>{{opportunities.stage}}</td>
+        <td>{{opportunities.close_date}}</td>
+        <td>{{opportunities.opportunity_owner}}</td>
+        
+      </tr>
+     
+    </tbody>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -10,10 +10,10 @@
           <a class="nav-link" href="{% url 'leads_list' %}">leads <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href=" ">Contacts<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'contacts_list' %}">Contacts<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="">Opportunities <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'opportunities_list'%}">Opportunities <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="">Calender <span class="sr-only">(current)</span></a>
@@ -21,7 +21,7 @@
        
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Notes</a>
+          <a class="nav-link active" href="{% url 'note'%}">Notes</a>
 
           </a>
         </li>
